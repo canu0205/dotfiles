@@ -16,7 +16,7 @@ style = "Italic"
 [window]
 opacity = 0.80
 blur = true
-padding.x = 0
+padding.x = 5
 padding.y = 0
 dynamic_padding = true
 
