@@ -1,0 +1,26 @@
+[font]
+size = 14.0
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[window]
+opacity = 0.80
+blur = true
+padding.x = 0
+padding.y = 0
+dynamic_padding = true
+
+[keyboard]
+bindings = [
+    { key = "Return", mods = "Shift", chars = "\n" }
+]
