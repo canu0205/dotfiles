@@ -456,7 +456,9 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch [C]ommands" })
+			vim.keymap.set("n", "<leader>sc", function()
+				builtin.colorscheme({ enable_preview = true })
+			end, { desc = "[S]earch [C]olorscheme" })
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 			-- GoLand-matching shortcuts (in addition to Kickstart <leader>s* keymaps above)
@@ -845,9 +847,16 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-night")
+			vim.cmd.colorscheme("tokyonight-day")
 		end,
 	},
+
+	{ "catppuccin/nvim", name = "catppuccin", opts = { no_italic = true } },
+	{ "rose-pine/neovim", name = "rose-pine", opts = { styles = { italic = false } } },
+	{ "EdenEast/nightfox.nvim" },
+	{ "sainnhe/everforest" },
+	{ "ellisonleao/gruvbox.nvim", opts = { italic = { comments = false } } },
+	{ "projekt0n/github-nvim-theme" },
 
 	-- Highlight todo, notes, etc in comments
 	{
