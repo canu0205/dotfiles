@@ -847,7 +847,8 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-day")
+			vim.o.background = "light"
+			vim.cmd.colorscheme("jb")
 		end,
 	},
 
@@ -857,6 +858,7 @@ require("lazy").setup({
 	{ "sainnhe/everforest" },
 	{ "ellisonleao/gruvbox.nvim", opts = { italic = { comments = false } } },
 	{ "projekt0n/github-nvim-theme" },
+	{ "nickkadutskyi/jb.nvim" },
 
 	-- Highlight todo, notes, etc in comments
 	{
