@@ -134,6 +134,12 @@ vim.o.signcolumn = "yes"
 -- Decrease update time
 vim.o.updatetime = 250
 
+-- Auto-reload files changed outside of nvim (e.g. by claude, codex, git)
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	command = "checktime",
+})
+
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
@@ -835,21 +841,11 @@ require("lazy").setup({
 		--
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 		"folke/tokyonight.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
-		config = function()
-			---@diagnostic disable-next-line: missing-fields
-			require("tokyonight").setup({
-				styles = {
-					comments = { italic = false }, -- Disable italics in comments
-				},
-			})
-
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.o.background = "light"
-			vim.cmd.colorscheme("jb")
-		end,
+		opts = {
+			styles = {
+				comments = { italic = false },
+			},
+		},
 	},
 
 	{ "catppuccin/nvim", name = "catppuccin", opts = { no_italic = true } },
@@ -1052,6 +1048,9 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.o.background = "dark"
+vim.cmd.colorscheme("vim")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
