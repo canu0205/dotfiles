@@ -1,4 +1,3 @@
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -74,6 +73,7 @@ ZSH_THEME=""
 plugins=(git zsh-autosuggestions fast-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
 
 # User configuration
 
@@ -102,6 +102,12 @@ export VISUAL=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias vi=nvim
+
+fv() {
+  local f
+  f=$(fzf -m --preview 'bat --color=always {}')
+  [[ -n $f ]] && nvim ${(f)f}
+}
 
 # Starship prompt
 eval "$(starship init zsh)"
