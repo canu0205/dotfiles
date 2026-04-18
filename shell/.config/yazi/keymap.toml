@@ -1,0 +1,4 @@
+[[input.prepend_keymap]]
+on = ["j", "k"]
+run = "escape"
+desc = "Exit input mode"

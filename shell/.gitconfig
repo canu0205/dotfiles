@@ -8,3 +8,6 @@
 
 [commit]
 	gpgsign = true
+
+[include]
+	path = ~/.gitconfig.local
