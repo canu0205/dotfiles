@@ -848,7 +848,7 @@ require("lazy").setup({
 		},
 	},
 
-	{ "catppuccin/nvim", name = "catppuccin", opts = { no_italic = true } },
+	{ "catppuccin/nvim", name = "catppuccin", opts = { no_italic = true, transparent_background = true } },
 	{ "rose-pine/neovim", name = "rose-pine", opts = { styles = { italic = false } } },
 	{ "EdenEast/nightfox.nvim" },
 	{ "sainnhe/everforest" },
@@ -1050,7 +1050,7 @@ require("lazy").setup({
 })
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("vim")
+vim.cmd.colorscheme("catppuccin-mocha")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
