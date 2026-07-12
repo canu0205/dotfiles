@@ -22,7 +22,7 @@ if [ "$(uname -m)" != "x86_64" ]; then
 fi
 
 apt-get update
-apt-get install -y git stow tmux unzip ripgrep
+apt-get install -y git stow unzip ripgrep
 
 tmp_dir=$(mktemp -d)
 trap 'rm -rf "$tmp_dir"' EXIT
@@ -32,4 +32,4 @@ curl -fsSL "https://github.com/neovim/neovim/releases/download/$nvim_version/nvi
 tar -C /opt -xzf "$archive"
 ln -sfn "$nvim_dir/bin/nvim" /usr/local/bin/nvim
 
-stow -R -d "$repo_dir" -t "$HOME" git tmux nvim
+stow -R -d "$repo_dir" -t "$HOME" git nvim
