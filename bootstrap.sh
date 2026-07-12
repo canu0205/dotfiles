@@ -32,4 +32,5 @@ curl -fsSL "https://github.com/neovim/neovim/releases/download/$nvim_version/nvi
 tar -C /opt -xzf "$archive"
 ln -sfn "$nvim_dir/bin/nvim" /usr/local/bin/nvim
 
-stow -R -d "$repo_dir" -t "$HOME" git nvim
+stow -D -d "$repo_dir" -t "$HOME" git
+stow -R -d "$repo_dir" -t "$HOME" nvim
