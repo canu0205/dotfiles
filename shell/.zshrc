@@ -144,3 +144,10 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
+
+# load private ault infrastructure variables
+if [[ -r "$HOME/.config/ault/.env" ]]; then
+  set -a
+  source "$HOME/.config/ault/.env"
+  set +a
+fi
